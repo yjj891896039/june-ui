@@ -1,0 +1,254 @@
+<template>
+  <div
+    class="container loading5"
+    v-if="isLoading"
+  >
+    <div class="container-box">
+      <div class="container-wrapper">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "loading",
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
+  methods: {
+    show() {
+      this.isLoading = true;
+    },
+    hide() {
+      this.isLoading = false;
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.container-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+.container-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.container {
+  position: absolute;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}
+
+.container.loading5 .shape {
+  width: 15px;
+  height: 15px;
+}
+
+.container .shape {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+.container .shape.shape1 {
+  left: 0;
+  background-color: #5c6bc0;
+}
+.container .shape.shape2 {
+  right: 0;
+  background-color: #8bc34a;
+}
+.container .shape.shape3 {
+  bottom: 0;
+  background-color: #ffb74d;
+}
+.container .shape.shape4 {
+  bottom: 0;
+  right: 0;
+  background-color: #f44336;
+}
+
+.loading5 .shape1 {
+  animation: animation5shape1 2s ease 0s infinite reverse;
+}
+
+@-webkit-keyframes animation5shape1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+  50% {
+    -webkit-transform: translate(15px, 15px);
+    transform: translate(15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+}
+
+@keyframes animation5shape1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+  50% {
+    -webkit-transform: translate(15px, 15px);
+    transform: translate(15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+}
+.loading5 .shape2 {
+  animation: animation5shape2 2s ease 0s infinite reverse;
+}
+
+@-webkit-keyframes animation5shape2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-15px, 15px);
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+}
+
+@keyframes animation5shape2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-15px, 15px);
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+  }
+}
+.loading5 .shape3 {
+  animation: animation5shape3 2s ease 0s infinite reverse;
+}
+
+@-webkit-keyframes animation5shape3 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(15px, -15px);
+    transform: translate(15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+}
+
+@keyframes animation5shape3 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+  50% {
+    -webkit-transform: translate(15px, -15px);
+    transform: translate(15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+}
+.loading5 .shape4 {
+  animation: animation5shape4 2s ease 0s infinite reverse;
+}
+
+@-webkit-keyframes animation5shape4 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+  50% {
+    -webkit-transform: translate(-15px, -15px);
+    transform: translate(-15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+}
+
+@keyframes animation5shape4 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+  }
+  50% {
+    -webkit-transform: translate(-15px, -15px);
+    transform: translate(-15px, -15px);
+  }
+  75% {
+    -webkit-transform: translate(-15px, 0);
+    transform: translate(-15px, 0);
+  }
+}
+</style>
