@@ -3,13 +3,13 @@
     <div class="container-wrapper">
       <div class="header-content">
         <h2>
-          <a href="/home">
+          <router-link to="/component/about">
             <img
-              src="@/assets/panda.svg"
+              src="@/assets/images/panda.svg"
               alt=""
             >
             <span class="head-title">welcome to june-ui</span>
-          </a>
+          </router-link>
         </h2>
         <ul>
           <li>
@@ -19,8 +19,8 @@
               placeholder="搜索文档..."
             ></el-input>
           </li>
-          <li @click="currNavIds = '1'" :class="{'active-item':currNavIds == '1'}"><a href="#">指南</a></li>
-          <li @click="currNavIds = '2'" :class="{'active-item':currNavIds == '2'}"><a href="#">组件</a></li>
+          <li @click="currNavIds = '1';$bus.$emit('comeFromHeadbar')" :class="{'active-item':currNavIds == '1'}"><router-link to="/component/about">组件</router-link></li>
+          <li @click="currNavIds = '2'" :class="{'active-item':currNavIds == '2'}"><router-link to="/guide/designIdea">指南</router-link></li>
           <li @click="currNavIds = '3'" :class="{'active-item':currNavIds == '3'}"><a href="https://cn.vuejs.org/">vue官方文档</a></li>
           <li @click="currNavIds = '4'" :class="{'active-item':currNavIds == '4'}"><a href="https://element.eleme.cn/#/zh-CN/">element官方文档</a></li>
           <li>
@@ -34,7 +34,6 @@
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>v1.0.0</el-dropdown-item>
-                <el-dropdown-item>v1.0.1</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </li>
@@ -44,7 +43,7 @@
               href="https://github.com/yjj891896039/june-ui"
             >
               <img
-                src="@/assets/github.svg"
+                src="@/assets/images/github.svg"
                 alt=""
               >
             </a>
@@ -68,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/animate.scss";
+@import "../../assets/css/animate.scss";
 
 .header {
   position: fixed;

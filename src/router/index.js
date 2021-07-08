@@ -1,26 +1,55 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BasicLayout from '@/layouts/BasicLayout.vue'
+import BasicLayout from '@/layouts/BasicLayout/BasicLayout.vue'
+import GuideLayout from '@/layouts/GuideLayout/GuideLayout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
+        name: 'home',
+        redirect: '/component',
+    },
+    {
+        path: '/component',
         name: 'basic',
-        redirect: '/about',
+        redirect: '/component/about',
         component: BasicLayout,
         children: [
             {
-                path: '/home', 
-                name: 'Home',
-                component: () => import('../pages/home/home.vue')
+                path: 'updateLog', 
+                name: 'updateLog',
+                component: () => import('../pages/updateLog/updateLog.vue')
             },
             {
-                path: '/about',
+                path: 'about',
                 name: 'About',
                 component: () => import('../pages/about/about.vue')
             },
+            {
+                path: 'quickStart',
+                name: 'quickStart',
+                component: () => import('../pages/quickStart/quickStart.vue')
+            }
+        ]
+    },
+    {
+        path: '/guide',
+        name: 'guide',
+        redirect: '/guide/designIdea',
+        component: GuideLayout,
+        children: [
+            {
+                path: 'designIdea', 
+                name: 'designIdea',
+                component: () => import('../pages/designIdea/designIdea.vue')
+            },
+            {
+                path: 'nav', 
+                name: 'nav',
+                component: () => import('../pages/nav/nav.vue')
+            }
         ]
     }
 ]

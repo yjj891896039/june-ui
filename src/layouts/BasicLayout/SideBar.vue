@@ -3,29 +3,28 @@
     <div class="page-scroll">
       <ul>
         <li class="nav-item">
-          <a
-            @click="currNavId='1'"
-            href="/about"
-          >起步</a>
+          <p
+          >起步</p>
           <div class="nav-group">
             <ul>
               <li
                 @click="currNavId='1'"
               >
-                <a :class="{'active':currNavId=='1'}" href="/about">介绍</a>
+                <router-link :class="{'active':currNavId=='1'}" :to="{path: '/component/about'}">介绍</router-link>
               </li>
-              <li><a href="#">快速上手</a></li>
-              <li><a href="#">更新日志</a></li>
+              <li @click="currNavId='2'"><router-link :class="{'active':currNavId=='2'}" to="/component/quickStart">快速上手</router-link></li>
+              <li @click="currNavId='3'"><router-link :class="{'active':currNavId=='3'}" to="/component/updateLog">更新日志</router-link></li>
             </ul>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#">组件</a>
+          <p>组件</p>
           <div class="nav-group">
             <div class="nav-group-title">pc端</div>
             <ul>
-              <li @click="currNavId='2'"><a href="#" :class="{'active':currNavId=='2'}">echarts 图表</a></li>
+              <li><a href="#">echarts 图表</a></li>
               <li><a href="#">Menu 导航菜单</a></li>
+              <li><a href="#">Loading 加载</a></li>
             </ul>
           </div>
           <div class="nav-group">
@@ -59,6 +58,15 @@ export default {
       currNavId: "1",
     };
   },
+  mounted () {
+    this.$bus.$on('comeFromHeadbar',()=>{
+      console.log('in');
+      this.currNavId = '1'
+    })
+  },
+  beforeDestroy(){
+    this.$bus.$off('comeFromHeadbar')
+  }
 };
 </script>
 
@@ -72,9 +80,13 @@ export default {
   margin-top: 80px;
   border-right: 1px solid #f5f5f5;
   .page-scroll {
-    overflow: auto;
     height: 100%;
     padding: 20px;
+    overflow-y:hidden;
+    overflow-x:hidden;
+  }
+  .page-scroll:hover {
+    overflow-y:auto
   }
   .nav-group-title {
     font-size: 12px;
@@ -82,7 +94,7 @@ export default {
     line-height: 26px;
     margin-top: 15px;
   }
-  .nav-item > a {
+  .nav-item > p {
     display: block;
     font-size: 16px;
     color: #333;
@@ -90,24 +102,23 @@ export default {
     height: 40px;
     line-height: 40px;
     margin-top: 15px;
-    cursor: pointer;
   }
   .nav-group {
     li a.active {
       color: #42b983;
     }
     li {
-      font-size: 14px;
-
-      height: 40px;
-      line-height: 40px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-weight: 400;
-      cursor: pointer;
       a {
+        display: block;
         color: #444;
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 400;
+        cursor: pointer;
       }
       &:hover a {
         color: #42b983;
