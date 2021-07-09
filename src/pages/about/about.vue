@@ -20,9 +20,7 @@ export default {};
 
 <style lang="scss" scoped>
 .page-wrapper {
-  font-size: 14px;
-  color: #5e6d82;
-  >div {
+  > div {
     margin-bottom: 50px;
   }
 }

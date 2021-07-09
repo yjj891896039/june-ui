@@ -4,6 +4,7 @@ import store from './store'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import './assets/css/global.scss'
 import './permission'
 import loading from '@/components/pc/loading/loading.js'
 Vue.use(ElementUI);
