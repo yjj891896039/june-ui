@@ -6,6 +6,7 @@ module.exports={
         port: 9090, // 设置启动项目端口号
         https: false, // 是否使用https协议
         open: true, // 设置是否自动打开浏览器
+        
         // proxy: {
         //     "/api": {
         //         target: "http://localhost:4000", // 要访问的接口域名

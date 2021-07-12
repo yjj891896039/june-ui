@@ -40,7 +40,7 @@
               <li><a href="#">Avatar 头像</a></li>
               <li><a href="#">Button 按钮</a></li>
               <li><a href="#">ScrollBar 滚动条</a></li>
-              <li><a href="#">CheckBox 复选框</a></li>
+              <li><a href="/component/checkbox">CheckBox 复选框</a></li>
               <li><a href="#">Radio 单选框</a></li>
             </ul>
           </div>

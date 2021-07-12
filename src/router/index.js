@@ -24,13 +24,18 @@ const routes = [
             },
             {
                 path: 'about',
-                name: 'About',
+                name: 'about',
                 component: () => import('../pages/about/about.vue')
             },
             {
                 path: 'quickStart',
                 name: 'quickStart',
                 component: () => import('../pages/quickStart/quickStart.vue')
+            },
+            {
+                path: 'checkbox',
+                name: 'checkbox',
+                component: () => import('../pages/checkbox/checkbox.vue')
             }
         ]
     },
