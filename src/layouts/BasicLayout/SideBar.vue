@@ -8,12 +8,12 @@
           <div class="nav-group">
             <ul>
               <li
-                @click="currNavId='1'"
+                @click="currNavId='about'"
               >
-                <router-link :class="{'active':currNavId=='1'}" :to="{path: '/component/about'}">介绍</router-link>
+                <router-link :class="{'active':currNavId=='about'}" :to="{path: '/component/about'}">介绍</router-link>
               </li>
-              <li @click="currNavId='2'"><router-link :class="{'active':currNavId=='2'}" to="/component/quickStart">快速上手</router-link></li>
-              <li @click="currNavId='3'"><router-link :class="{'active':currNavId=='3'}" to="/component/updateLog">更新日志</router-link></li>
+              <li @click="currNavId='quickStart'"><router-link :class="{'active':currNavId=='quickStart'}" to="/component/quickStart">快速上手</router-link></li>
+              <li @click="currNavId='updateLog'"><router-link :class="{'active':currNavId=='updateLog'}" to="/component/updateLog">更新日志</router-link></li>
             </ul>
           </div>
         </li>
@@ -40,7 +40,7 @@
               <li><a href="#">Avatar 头像</a></li>
               <li><a href="#">Button 按钮</a></li>
               <li><a href="#">ScrollBar 滚动条</a></li>
-              <li><a href="/component/checkbox">CheckBox 复选框</a></li>
+              <li @click="currNavId='checkbox'"><router-link to="/component/checkbox" :class="{'active':currNavId=='checkbox'}">CheckBox 复选框</router-link></li>
               <li><a href="#">Radio 单选框</a></li>
             </ul>
           </div>
@@ -55,13 +55,12 @@ export default {
   name: "side-bar",
   data() {
     return {
-      currNavId: "1",
+      currNavId: "about",
     };
   },
   mounted () {
     this.$bus.$on('comeFromHeadbar',()=>{
-      console.log('in');
-      this.currNavId = '1'
+      this.currNavId = 'about'
     })
   },
   beforeDestroy(){

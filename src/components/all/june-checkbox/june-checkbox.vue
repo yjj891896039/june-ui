@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "j-check-box",
+  name: 'JuneCheckbox',
   props: {
     checked: {
       type: Boolean,

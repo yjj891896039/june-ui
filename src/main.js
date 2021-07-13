@@ -7,6 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/css/global.scss'
 import './permission'
 import loading from '@/components/pc/loading/loading.js'
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
