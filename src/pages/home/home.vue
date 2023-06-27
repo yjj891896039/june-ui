@@ -1,6 +1,6 @@
 <template>
   <div>
-    home is home page (version2)
+    home is home page (version3)
   </div>
 </template>
 
