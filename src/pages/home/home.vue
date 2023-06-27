@@ -1,6 +1,6 @@
 <template>
   <div>
-    home
+    home is home page (version1)
   </div>
 </template>
 
@@ -8,7 +8,7 @@
   export default {
     data() {
       return {
-        timerIds: []
+        timerIds: [1,2,3,4]
       }
     },
     mounted () {
